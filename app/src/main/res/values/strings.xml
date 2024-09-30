@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Compose Counter App</string>
+    <string name="counter_description">You have pushed the button this many times.</string>
+</resources>
