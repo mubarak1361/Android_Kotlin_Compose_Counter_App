@@ -48,27 +48,39 @@ fun CounterScreen() {
     val counter = remember { mutableIntStateOf(0) }
 
     Scaffold(modifier = Modifier.fillMaxSize(),
-        topBar = { TopAppBar(title = { Text(text = stringResource(id = R.string.app_name)) },
-            colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primaryContainer)) },
-        floatingActionButton = { FloatingActionButton(
-        onClick = { counter.intValue ++ }) {
-        Icon(Icons.Default.Add, contentDescription = null)
-    } }) { innerPadding ->
+        topBar = {
+            TopAppBar(
+                title = { Text(text = stringResource(id = R.string.app_name)) },
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
+            )
+        },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = { counter.intValue++ }) {
+                Icon(Icons.Default.Add, contentDescription = null)
+            }
+        }) { innerPadding ->
 
-    Column(modifier = Modifier
-        .padding(innerPadding)
-        .fillMaxSize()
-        .wrapContentSize(Alignment.Center)) {
+        Column(
+            modifier = Modifier
+                .padding(innerPadding)
+                .fillMaxSize()
+                .wrapContentSize(Alignment.Center)
+        ) {
 
-            Text(modifier = Modifier.align(Alignment.CenterHorizontally),
-                text = stringResource(id = R.string.counter_description))
+            Text(
+                modifier = Modifier.align(Alignment.CenterHorizontally),
+                text = stringResource(id = R.string.counter_description)
+            )
 
-            Text(modifier = Modifier.align(Alignment.CenterHorizontally),
+            Text(
+                modifier = Modifier.align(Alignment.CenterHorizontally),
                 text = counter.intValue.toString(),
                 fontSize = 24.sp,
-                fontWeight = FontWeight.Bold)
+                fontWeight = FontWeight.Bold
+            )
 
-    }
+        }
     }
 }
 
